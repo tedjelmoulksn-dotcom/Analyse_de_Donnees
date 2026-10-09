@@ -1,6 +1,10 @@
 # Data Analysis — PCA and Introductory Machine Learning
 
-MATLAB and Python laboratory work connecting statistical representations of data with supervised learning. The repository covers principal component analysis (PCA), nearest-neighbour classification and introductory linear regression.
+MATLAB and Python exercises in PCA, classification and statistical data analysis.
+
+![Two complementary analysis paths.](assets/project-overview.svg)
+
+*Two complementary analysis paths.*
 
 ## Project map
 
