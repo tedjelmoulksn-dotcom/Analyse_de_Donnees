@@ -26,7 +26,7 @@ The scripts use standard MATLAB operations including `cov`, `corrcoef`, `eig` an
 
 The real-data exercise uses columns seven/eight and a ninth-column class indicator. Dataset provenance, column units and class meaning require explicit verification. Exploratory associations do not establish causal economic effects.
 
-Report and script versions differ in some plotted reference-line parameters. Identify the exact version used when reproducing a figure. No fresh PCA results or exported figures were generated for this documentation update.
+Report and script versions differ in some reference-line parameters. Keep the active script version with each figure and interpret eigenvector direction consistently, remembering that its sign is arbitrary.
 
 ## Licence
 
