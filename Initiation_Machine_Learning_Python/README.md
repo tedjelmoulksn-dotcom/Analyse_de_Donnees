@@ -1,37 +1,57 @@
-# Introductory Machine Learning in Python
+# Initiation au Machine Learning en Python
 
-Exercises on Iris classification, nearest-neighbour selection and introductory linear regression.
+## Vue d'ensemble
+Premiers exercices de machine learning avec scikit-learn réalisés en TP (formation 2023–2026) : classification du jeu de données Iris par k plus proches voisins et régression linéaire.
 
-## Scripts
+## Objectifs
+- Découper un jeu de données en apprentissage/test.
+- Entraîner un classifieur kNN et évaluer sa précision.
+- Choisir k par validation croisée.
+- Réaliser une régression linéaire simple.
 
-| Script | Purpose |
+## Architecture
+| Script | Contenu |
 |---|---|
-| [`exo1_iris_decoupage.py`](src/exo1_iris_decoupage.py) | Inspect Iris data and train/test partitions |
-| [`exo2_knn_k1.py`](src/exo2_knn_k1.py) | Classify with one nearest neighbour |
-| [`exo3_knn_validation_croisee.py`](src/exo3_knn_validation_croisee.py) | Explore neighbour counts using five-fold validation |
-| [`tp2_regression_lineaire.py`](src/tp2_regression_lineaire.py) | Working linear-regression exercise |
+| `exo1_iris_decoupage.py` | Chargement d'Iris et découpage apprentissage/test |
+| `exo2_knn_k1.py` | Classifieur kNN avec k=1 |
+| `exo3_knn_validation_croisee.py` | `cross_val_score` (cv=5) pour k de 1 à 49, tracé du score en fonction de k |
+| `tp2_regression_lineaire.py` | `LinearRegression` (une partie du script est commentée) |
 
-## Environment
+## Matériel
+Aucun.
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install numpy matplotlib scikit-learn
-python src/exo2_knn_k1.py
+## Logiciel
+Python 3, scikit-learn, NumPy, Matplotlib.
+
+## Implémentation
+Scripts courts et indépendants s'appuyant sur les API scikit-learn.
+
+## Principes d'ingénierie
+- Séparation des données pour éviter le surapprentissage.
+- Validation croisée pour le réglage d'un hyperparamètre.
+
+## Résultats
+Scores obtenus : À documenter (relancer les scripts).
+
+## Difficultés / limites
+Travail d'initiation ; partie commentée dans `tp2_regression_lineaire.py`.
+
+## Structure
+```
+Initiation_Machine_Learning_Python/
+├── README.md
+├── .gitignore
+└── src/
 ```
 
-Run commands from this module directory. The scripts are standalone educational examples, not a packaged training pipeline.
+## Exécution
+```bash
+pip install scikit-learn numpy matplotlib
+python src/exo3_knn_validation_croisee.py
+```
 
-## Cross-validation review
+## Médias
+À documenter.
 
-The validation script overwrites its initial split with `test_size=0.8`, leaving only 30 of the 150 Iris observations for training. With five folds, each fitted model has 24 training observations. A neighbour sweep through 49 therefore exceeds the available fold size.
-
-Use neighbour counts no larger than the smallest training fold, select parameters using training data and retain a final independent test set. Review comments that reverse the training/test proportions.
-
-## Validation status
-
-The regression script preserves intermediate exercise steps. For each run, keep the active code section, dependency versions and train/test policy together with the resulting score. Cross-validation selects parameters; the held-out test estimates generalisation.
-
-## Licence
-
-No project-wide licence has been defined.
+## Compétences
+Python, scikit-learn, classification kNN, validation croisée, régression linéaire.
