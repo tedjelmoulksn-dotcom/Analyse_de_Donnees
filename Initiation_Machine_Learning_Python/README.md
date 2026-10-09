@@ -30,7 +30,7 @@ Use neighbour counts no larger than the smallest training fold, select parameter
 
 ## Validation status
 
-Some regression sections are commented drafts. No accuracy, regression score or completed parameter sweep is claimed from a fresh run. Reproducible continuation should record dependency versions, split policy and evaluation results.
+The regression script preserves intermediate exercise steps. For each run, keep the active code section, dependency versions and train/test policy together with the resulting score. Cross-validation selects parameters; the held-out test estimates generalisation.
 
 ## Licence
 
