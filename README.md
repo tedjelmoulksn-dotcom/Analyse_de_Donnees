@@ -31,9 +31,11 @@ Open the MATLAB scripts from their module directory so that relative data paths 
 
 ## Reproducibility
 
-This is a teaching archive rather than a packaged analysis pipeline. Some scripts contain draft sections. In particular, the cross-validation exercise overwrites its first split with an 80% test split, then sweeps neighbour counts beyond the training-fold size. Adjust that sweep before interpreting its results.
+Reproducibility rests on three choices: the variable scale used for PCA, the split used for supervised learning and the training-fold size used for parameter selection. Record these together with the script version so that comparisons refer to the same experiment.
 
-No classification scores, regression performance or new numerical results are claimed by this documentation update. The real-data PCA describes associations, not causal relationships.
+The exercises make data preparation and evaluation choices visible. In particular, the cross-validation exercise overwrites its first split with an 80% test split, then sweeps neighbour counts beyond the training-fold size. Adjust that sweep before interpreting its results.
+
+PCA describes the dominant variation in the selected variables. Classification evaluation addresses a different question: whether a trained decision rule generalises to observations excluded from fitting.
 
 ## Repository ownership and reuse
 
