@@ -1,15 +1,21 @@
-# Analyse de données
+# Data Analysis and Machine Learning
 
-TP d'analyse de données et d'initiation au machine learning (Sup Galilée, 2024).
+Introductory studies in principal component analysis and supervised learning. MATLAB scripts explore covariance, correlation and projections; Python exercises use Iris classification, k-nearest neighbours, cross-validation and linear regression.
 
-| Dossier | Contenu | Outils |
-|---|---|---|
-| [`acp_matlab/`](acp_matlab/) | Analyse en composantes principales : centrage-réduction, matrices de covariance et de corrélation, valeurs propres, projections | MATLAB |
-| [`machine_learning_python/`](machine_learning_python/) | Jeu Iris, classifieur kNN, validation croisée pour choisir k, régression linéaire | Python, scikit-learn |
+## Repository guide
 
-## Compétences
-Statistiques multivariées, réduction de dimension, classification supervisée, validation croisée.
+| Location | Contents |
+|---|---|
+| [ACP_MATLAB/](ACP_MATLAB/) | PCA scripts, datasets and reports |
+| [Initiation_Machine_Learning_Python/](Initiation_Machine_Learning_Python/) | Python learning exercises and original variants |
+| [assets/](assets/) | Project overview |
 
-## Remarques
-- Origine du jeu de données de l'ACP à vérifier avant publication (voir README du dossier).
-- Aucune licence n'a été définie.
+## Getting started
+
+For Python, install `numpy`, `matplotlib` and `scikit-learn`, then run the exercises in `Initiation_Machine_Learning_Python/src/`. Open the PCA scripts in MATLAB and keep their input datasets available in the working directory.
+
+## Project context
+
+Academic exercises at Sup Galilée. Original scripts are preserved alongside the organised examples.
+
+An original PCA script with legacy encoding remains in [the analogue-electronics archive](https://github.com/tedjelmoulksn-dotcom/Electronique_Analogique/blob/main/archive/pca_original/acp_midifie.m).

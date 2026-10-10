@@ -1,0 +1,133 @@
+X=randn(1000,2);
+disp(X);
+A=ones(1000,2);
+M=mean(X);
+B=A*diag(M);
+%cetrage 
+X=X-B;
+sygma = std(X);
+T=inv(diag(std(X)))
+%reductio
+
+X=X*T;
+C=cov(X)
+COEF=corrcoef(X);
+ec=eig(C);
+ecoef=eig(COEF);
+
+
+
+X_prime=X * [ 1, 0 ; 0, 2 ];
+c_X_prime=cov(X_prime);
+coef_X_prime=corrcoef(X_prime);
+
+ec_X_prime=eig(c_X_prime);
+ecoef_X_prime=eig(coef_X_prime)
+
+
+
+X_deux_prime= X * [ 1, 0 ; 0, 3 ];
+c_X_deux_prime=cov(X_deux_prime);
+coef_X_deux_prime=corrcoef(X_deux_prime);
+
+ec_X_deux_prime=eig(c_X_deux_prime);
+ecoef_X_deux_prime=eig(coef_X_deux_prime)
+
+% question 9 :la transformation lineaire modifie les valeurs propres de la
+% matrice de COVARIANCE 
+
+% question 10 Pour chaque cas, nous devons observer les valeurs de la trace des matrices 
+%de covariance et de corr lation, et les comparer avec les sommes de leurs valeurs propres respectives.
+trace_cov_X = trace(C);
+trace_corr_X = trace(COEF);
+
+
+trace_cov_X_prime = trace(c_X_prime);
+trace_corr_X_prime = trace(coef_X_prime);
+
+
+trace_cov_X_deux_prime = trace(c_X_deux_prime);
+trace_corr_X_deux_prime = trace(coef_X_deux_prime);
+%Les transformations lin aires affectent la matrice de covariance,
+%modifiant ainsi sa trace et ses valeurs propres, tandis que la matrice de corr lation reste inchang e   l'exception de l' chelle.
+% Calcul des vecteurs propres et projections pour chaque jeu de donn es
+% Pour X centr  et r duit
+[V_cov, D_cov] = eig(C);
+[V_corr, D_corr] = eig(COEF);
+proj_cov_X = X * V_cov;
+proj_corr_X = X * V_corr;
+
+% Pour X_prime
+[V_cov_prime, D_cov_prime] = eig(c_X_prime);
+[V_corr_prime, D_corr_prime] = eig(coef_X_prime);
+proj_cov_X_prime = X_prime * V_cov_prime;
+proj_corr_X_prime = X_prime * V_corr_prime;
+
+% Pour X_deux_prime
+[V_cov_deux_prime, D_cov_deux_prime] = eig(c_X_deux_prime);
+[V_corr_deux_prime, D_corr_deux_prime] = eig(coef_X_deux_prime);
+proj_cov_X_deux_prime = X_deux_prime * V_cov_deux_prime;
+proj_corr_X_deux_prime = X_deux_prime * V_corr_deux_prime;
+
+% Affichage avec subplot
+figure;
+
+% Projections pour X centr  et r duit
+subplot(3, 2, 1);
+plot(proj_cov_X(:, 1), proj_cov_X(:, 2), 'o');
+title('X in Covariance Eigenvector Basis');
+xlabel('PC1');
+ylabel('PC2');
+
+subplot(3, 2, 2);
+plot(proj_corr_X(:, 1), proj_corr_X(:, 2), 'o');
+title('X in Correlation Eigenvector Basis');
+xlabel('PC1');
+ylabel('PC2');
+
+% Projections pour X_prime
+subplot(3, 2, 3);
+plot(proj_cov_X_prime(:, 1), proj_cov_X_prime(:, 2), 'o');
+title('X\_prime in Covariance Eigenvector Basis');
+xlabel('PC1');
+ylabel('PC2');
+
+subplot(3, 2, 4);
+plot(proj_corr_X_prime(:, 1), proj_corr_X_prime(:, 2), 'o');
+title('X\_prime in Correlation Eigenvector Basis');
+xlabel('PC1');
+ylabel('PC2');
+
+% Projections pour X_deux_prime
+subplot(3, 2, 5);
+plot(proj_cov_X_deux_prime(:, 1), proj_cov_X_deux_prime(:, 2), 'o');
+title('X\_deux\_prime in Covariance Eigenvector Basis');
+xlabel('PC1');
+ylabel('PC2');
+
+subplot(3, 2, 6);
+plot(proj_corr_X_deux_prime(:, 1), proj_corr_X_deux_prime(:, 2), 'o');
+title('X\_deux\_prime in Correlation Eigenvector Basis');
+xlabel('PC1');
+ylabel('PC2');
+
+% Afficher la figure
+figure(gcf);
+
+%question 12
+transformation_matrix = [1, 0; 0, 1; 1, 0];
+X_transformed = X * transformation_matrix;
+C_transformed = cov(X_transformed);
+COEF_transformed = corrcoef(X_transformed);
+
+[vect_propre val_propres]=eig(C_transformed);
+
+transformation_matrix1 =[ 1, 0 ; 0, 1 ; 1, 1 ];
+X_transformed1 = X * transformation_matrix1;
+C_transformed1 = cov(X_transformed1);
+COEF_transformed1 = corrcoef(X_transformed1);
+[vect_propre1 val_propres1]=eig(C_transformed1);
+
+
+X * [ 1, 0 ; 0, 1 ; 1, 2 ]
+
