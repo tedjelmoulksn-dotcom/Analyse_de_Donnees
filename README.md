@@ -9,6 +9,12 @@ Introductory studies in principal component analysis and supervised learning. MA
 | [ACP_MATLAB/](ACP_MATLAB/) | PCA scripts, datasets and reports |
 | [Initiation_Machine_Learning_Python/](Initiation_Machine_Learning_Python/) | Python learning exercises and original variants |
 | [assets/](assets/) | Project overview |
+![Analyse de Donnees project overview](assets/project-overview.svg)
+
+*Study overview: PCA and classification are complementary analysis paths.*
+
+## Compétences
+Statistiques multivariées, réduction de dimension, classification supervisée, validation croisée.
 
 ## Getting started
 
